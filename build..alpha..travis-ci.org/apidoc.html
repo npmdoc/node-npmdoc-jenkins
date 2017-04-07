@@ -1,0 +1,6539 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/silas/node-jenkins#readme"
+
+    >jenkins (v0.20.0)</a>
+</h1>
+<h4>Jenkins client</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins">module jenkins</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins">
+            function <span class="apidocSignatureSpan">jenkins.</span>Jenkins
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Build">
+            function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Build
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.CrumbIssuer">
+            function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.CrumbIssuer
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job">
+            function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Job
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node">
+            function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Node
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Queue">
+            function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Queue
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View">
+            function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.View
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_">
+            function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.super_
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>jenkins</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Build.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>Jenkins.CrumbIssuer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Job.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Node.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Queue.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>Jenkins.View.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>Jenkins.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>Jenkins.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>crumb_issuer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>job</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>middleware</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>node</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>queue</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.</span>view</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins">module jenkins.Jenkins</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Jenkins">
+            function <span class="apidocSignatureSpan">jenkins.</span>Jenkins
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Build">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Build
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.CrumbIssuer">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>CrumbIssuer
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Job
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Node
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Queue">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Queue
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>View
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>super_
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.walk">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>walk
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.Jenkins.</span>meta</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.Build">module jenkins.Jenkins.Build</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Build.Build">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Build
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.Jenkins.Build.</span>meta</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.Build.prototype">module jenkins.Jenkins.Build.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Build.prototype.get">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Build.prototype.</span>get
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Build.prototype.log">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Build.prototype.</span>log
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Build.prototype.logStream">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Build.prototype.</span>logStream
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Build.prototype.stop">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Build.prototype.</span>stop
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.CrumbIssuer">module jenkins.Jenkins.CrumbIssuer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.CrumbIssuer.CrumbIssuer">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>CrumbIssuer
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.Jenkins.CrumbIssuer.</span>meta</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.CrumbIssuer.prototype">module jenkins.Jenkins.CrumbIssuer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.CrumbIssuer.prototype.get">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.CrumbIssuer.prototype.</span>get
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.Job">module jenkins.Jenkins.Job</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.Job">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Job
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.Jenkins.Job.</span>meta</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.Job.prototype">module jenkins.Jenkins.Job.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.build">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>build
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.config">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>config
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.copy">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>copy
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.create">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>create
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.delete">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>delete
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.destroy">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.disable">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>disable
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.enable">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>enable
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.exists">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>exists
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.get">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>get
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Job.prototype.list">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>list
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.Node">module jenkins.Jenkins.Node</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.Node">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Node
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.Jenkins.Node.</span>meta</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.Node.prototype">module jenkins.Jenkins.Node.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.changeOfflineCause">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>changeOfflineCause
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.config">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>config
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.create">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>create
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.delete">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>delete
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.destroy">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.disable">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>disable
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.disconnect">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.doDisconnect">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>doDisconnect
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.enable">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>enable
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.exists">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>exists
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.get">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>get
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.list">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>list
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Node.prototype.toggleOffline">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>toggleOffline
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.Queue">module jenkins.Jenkins.Queue</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Queue.Queue">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Queue
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.Queue.prototype">module jenkins.Jenkins.Queue.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Queue.prototype.cancel">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Queue.prototype.</span>cancel
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Queue.prototype.get">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Queue.prototype.</span>get
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Queue.prototype.item">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Queue.prototype.</span>item
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.Queue.prototype.list">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.Queue.prototype.</span>list
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.View">module jenkins.Jenkins.View</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.View">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>View
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jenkins.Jenkins.View.</span>meta</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.View.prototype">module jenkins.Jenkins.View.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.prototype.add">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>add
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.prototype.config">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>config
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.prototype.create">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>create
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.prototype.delete">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>delete
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.prototype.destroy">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.prototype.exists">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>exists
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.prototype.get">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>get
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.prototype.list">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>list
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.View.prototype.remove">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>remove
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.prototype">module jenkins.Jenkins.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.prototype._onCreate">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>_onCreate
+            <span class="apidocSignatureSpan">(ctx, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.prototype._onResponse">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>_onResponse
+            <span class="apidocSignatureSpan">(ctx, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.prototype.get">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>get
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.prototype.info">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>info
+            <span class="apidocSignatureSpan">(opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.prototype.walk">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>walk
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.super_">module jenkins.Jenkins.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.super_">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.Jenkins.super_.prototype">module jenkins.Jenkins.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype.__create">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>__create
+            <span class="apidocSignatureSpan">(request, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype.__execute">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>__execute
+            <span class="apidocSignatureSpan">(request, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype.__push">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>__push
+            <span class="apidocSignatureSpan">(request, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._decode">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_decode
+            <span class="apidocSignatureSpan">(mime, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._delete">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_delete
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._encode">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_encode
+            <span class="apidocSignatureSpan">(mime, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._err">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_err
+            <span class="apidocSignatureSpan">(err, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._ext">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_ext
+            <span class="apidocSignatureSpan">(eventName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._get">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_get
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._head">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_head
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._log">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_log
+            <span class="apidocSignatureSpan">(tags, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._options">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_options
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._patch">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_patch
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._plugin">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_plugin
+            <span class="apidocSignatureSpan">(plugin, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._post">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_post
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._put">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_put
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.Jenkins.super_.prototype._request">
+            function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_request
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.crumb_issuer">module jenkins.crumb_issuer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.crumb_issuer.CrumbIssuer">
+            function <span class="apidocSignatureSpan">jenkins.crumb_issuer.</span>CrumbIssuer
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.jenkins">module jenkins.jenkins</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.jenkins.Jenkins">
+            function <span class="apidocSignatureSpan">jenkins.jenkins.</span>Jenkins
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.job">module jenkins.job</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.job.Job">
+            function <span class="apidocSignatureSpan">jenkins.job.</span>Job
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.middleware">module jenkins.middleware</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.middleware.body">
+            function <span class="apidocSignatureSpan">jenkins.middleware.</span>body
+            <span class="apidocSignatureSpan">(ctx, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.middleware.bodyItem">
+            function <span class="apidocSignatureSpan">jenkins.middleware.</span>bodyItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.middleware.empty">
+            function <span class="apidocSignatureSpan">jenkins.middleware.</span>empty
+            <span class="apidocSignatureSpan">(ctx, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.middleware.exists">
+            function <span class="apidocSignatureSpan">jenkins.middleware.</span>exists
+            <span class="apidocSignatureSpan">(ctx, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.middleware.notFound">
+            function <span class="apidocSignatureSpan">jenkins.middleware.</span>notFound
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.middleware.queueLocation">
+            function <span class="apidocSignatureSpan">jenkins.middleware.</span>queueLocation
+            <span class="apidocSignatureSpan">(ctx, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.middleware.require302">
+            function <span class="apidocSignatureSpan">jenkins.middleware.</span>require302
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.node">module jenkins.node</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.node.Node">
+            function <span class="apidocSignatureSpan">jenkins.node.</span>Node
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.queue">module jenkins.queue</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.queue.Queue">
+            function <span class="apidocSignatureSpan">jenkins.queue.</span>Queue
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.utils">module jenkins.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.utils.FolderPath">
+            function <span class="apidocSignatureSpan">jenkins.utils.</span>FolderPath
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.utils.crumbIssuer">
+            function <span class="apidocSignatureSpan">jenkins.utils.</span>crumbIssuer
+            <span class="apidocSignatureSpan">(jenkins, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.utils.options">
+            function <span class="apidocSignatureSpan">jenkins.utils.</span>options
+            <span class="apidocSignatureSpan">(req, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jenkins.view">module jenkins.view</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jenkins.view.View">
+            function <span class="apidocSignatureSpan">jenkins.view.</span>View
+            <span class="apidocSignatureSpan">(jenkins)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins" id="apidoc.module.jenkins">module jenkins</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins" id="apidoc.element.jenkins.Jenkins">
+        function <span class="apidocSignatureSpan">jenkins.</span>Jenkins
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Jenkins(opts) {
+  if (!(this instanceof Jenkins)) {
+    return new Jenkins(opts);
+  }
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { baseUrl: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  if (!opts.baseUrl) {
+    if (opts.url) {
+      opts.baseUrl = opts.url;
+      delete opts.url;
+    } else {
+      throw new Error(&#x27;baseUrl required&#x27;);
+    }
+  }
+
+  if (!opts.headers) {
+    opts.headers = {};
+  }
+  if (!opts.headers.referer) {
+    opts.headers.referer = opts.baseUrl + &#x27;/&#x27;;
+  }
+
+  if (opts.request) {
+    throw new Error(&#x27;request not longer supported&#x27;);
+  }
+
+  opts.name = &#x27;jenkins&#x27;;
+
+  if (typeof opts.crumbIssuer === &#x27;function&#x27;) {
+    this._crumbIssuer = opts.crumbIssuer;
+  } else if (opts.crumbIssuer === true) {
+    this._crumbIssuer = utils.crumbIssuer;
+  }
+
+  papi.Client.call(this, opts);
+
+  this._ext(&#x27;onCreate&#x27;, this._onCreate);
+  this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+  this.build = new Jenkins.Build(this);
+  this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+  this.job = new Jenkins.Job(this);
+  this.node = new Jenkins.Node(this);
+  this.queue = new Jenkins.Queue(this);
+  this.view = new Jenkins.View(this);
+
+  try {
+    if (opts.promisify) {
+      if (typeof opts.promisify === &#x27;function&#x27;) {
+        papi.tools.promisify(this, opts.promisify);
+      } else {
+        papi.tools.promisify(this);
+      }
+    }
+  } catch (err) {
+    err.message = &#x27;promisify: &#x27; + err.message;
+    throw err;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Build" id="apidoc.element.jenkins.Jenkins.Build">
+        function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Build
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Build(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.CrumbIssuer" id="apidoc.element.jenkins.Jenkins.CrumbIssuer">
+        function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.CrumbIssuer
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CrumbIssuer(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job" id="apidoc.element.jenkins.Jenkins.Job">
+        function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Job
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Job(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node" id="apidoc.element.jenkins.Jenkins.Node">
+        function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Node
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Node(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Queue" id="apidoc.element.jenkins.Jenkins.Queue">
+        function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.Queue
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Queue(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View" id="apidoc.element.jenkins.Jenkins.View">
+        function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.View
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function View(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_" id="apidoc.element.jenkins.Jenkins.super_">
+        function <span class="apidocSignatureSpan">jenkins.</span>Jenkins.super_
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(opts) {
+  if (!(this instanceof Client)) {
+    return new Client(opts);
+  }
+
+  events.EventEmitter.call(this);
+
+  opts = opts || {};
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { baseUrl: opts };
+  }
+
+  if (!opts.baseUrl) {
+    throw errors.Validation(&#x27;baseUrl required&#x27;);
+  }
+
+  if (!(opts.baseUrl instanceof url.Url)) {
+    if (typeof opts.baseUrl !== &#x27;string&#x27;) {
+      throw errors.Validation(&#x27;baseUrl must be a string: &#x27; + opts.baseUrl);
+    }
+
+    opts.baseUrl = url.parse(opts.baseUrl);
+  }
+
+  opts.baseUrl.path = opts.baseUrl.pathname;
+  opts.baseUrl = utils.pick(opts.baseUrl,
+    &#x27;auth&#x27;, &#x27;hostname&#x27;, &#x27;path&#x27;, &#x27;port&#x27;, &#x27;protocol&#x27;);
+
+  if (opts.baseUrl.path === &#x27;/&#x27;) {
+    opts.baseUrl.path = &#x27;&#x27;;
+  } else if (opts.baseUrl.path[opts.baseUrl.path.length - 1] === &#x27;/&#x27;) {
+    throw errors.Validation(&#x27;baseUrl must not end with a forward slash&#x27;);
+  }
+
+  opts.headers = utils.mergeHeaders(opts.headers);
+  opts.tags = opts.tags || [];
+
+  if (opts.name &#x26;&#x26; !~opts.tags.indexOf(opts.name)) {
+    opts.tags = opts.tags.concat(opts.name);
+  }
+
+  opts.encoders = utils.merge(constants.ENCODERS, opts.encoders);
+  opts.decoders = utils.merge(constants.DECODERS, opts.decoders);
+
+  this._opts = opts;
+  this._exts = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins" id="apidoc.module.jenkins.Jenkins">module jenkins.Jenkins</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Jenkins" id="apidoc.element.jenkins.Jenkins.Jenkins">
+        function <span class="apidocSignatureSpan">jenkins.</span>Jenkins
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Jenkins(opts) {
+  if (!(this instanceof Jenkins)) {
+    return new Jenkins(opts);
+  }
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { baseUrl: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  if (!opts.baseUrl) {
+    if (opts.url) {
+      opts.baseUrl = opts.url;
+      delete opts.url;
+    } else {
+      throw new Error(&#x27;baseUrl required&#x27;);
+    }
+  }
+
+  if (!opts.headers) {
+    opts.headers = {};
+  }
+  if (!opts.headers.referer) {
+    opts.headers.referer = opts.baseUrl + &#x27;/&#x27;;
+  }
+
+  if (opts.request) {
+    throw new Error(&#x27;request not longer supported&#x27;);
+  }
+
+  opts.name = &#x27;jenkins&#x27;;
+
+  if (typeof opts.crumbIssuer === &#x27;function&#x27;) {
+    this._crumbIssuer = opts.crumbIssuer;
+  } else if (opts.crumbIssuer === true) {
+    this._crumbIssuer = utils.crumbIssuer;
+  }
+
+  papi.Client.call(this, opts);
+
+  this._ext(&#x27;onCreate&#x27;, this._onCreate);
+  this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+  this.build = new Jenkins.Build(this);
+  this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+  this.job = new Jenkins.Job(this);
+  this.node = new Jenkins.Node(this);
+  this.queue = new Jenkins.Queue(this);
+  this.view = new Jenkins.View(this);
+
+  try {
+    if (opts.promisify) {
+      if (typeof opts.promisify === &#x27;function&#x27;) {
+        papi.tools.promisify(this, opts.promisify);
+      } else {
+        papi.tools.promisify(this);
+      }
+    }
+  } catch (err) {
+    err.message = &#x27;promisify: &#x27; + err.message;
+    throw err;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Build" id="apidoc.element.jenkins.Jenkins.Build">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Build
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Build(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+papi.Client.call(this, opts);
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.<span class="apidocCodeKeywordSpan">Build</span>(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.CrumbIssuer" id="apidoc.element.jenkins.Jenkins.CrumbIssuer">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>CrumbIssuer
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CrumbIssuer(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+papi.Client.call(this, opts);
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.<span class="apidocCodeKeywordSpan">CrumbIssuer</span>(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job" id="apidoc.element.jenkins.Jenkins.Job">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Job
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Job(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+papi.Client.call(this, opts);
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.<span class="apidocCodeKeywordSpan">Job</span>(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node" id="apidoc.element.jenkins.Jenkins.Node">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Node
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Node(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.<span class="apidocCodeKeywordSpan">Node</span>(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+      papi.tools.promisify(this, opts.promisify);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Queue" id="apidoc.element.jenkins.Jenkins.Queue">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Queue
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Queue(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.<span class="apidocCodeKeywordSpan">Queue</span>(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+      papi.tools.promisify(this, opts.promisify);
+    } else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View" id="apidoc.element.jenkins.Jenkins.View">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>View
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function View(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.<span class="apidocCodeKeywordSpan">View</span>(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+      papi.tools.promisify(this, opts.promisify);
+    } else {
+      papi.tools.promisify(this);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_" id="apidoc.element.jenkins.Jenkins.super_">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>super_
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(opts) {
+  if (!(this instanceof Client)) {
+    return new Client(opts);
+  }
+
+  events.EventEmitter.call(this);
+
+  opts = opts || {};
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { baseUrl: opts };
+  }
+
+  if (!opts.baseUrl) {
+    throw errors.Validation(&#x27;baseUrl required&#x27;);
+  }
+
+  if (!(opts.baseUrl instanceof url.Url)) {
+    if (typeof opts.baseUrl !== &#x27;string&#x27;) {
+      throw errors.Validation(&#x27;baseUrl must be a string: &#x27; + opts.baseUrl);
+    }
+
+    opts.baseUrl = url.parse(opts.baseUrl);
+  }
+
+  opts.baseUrl.path = opts.baseUrl.pathname;
+  opts.baseUrl = utils.pick(opts.baseUrl,
+    &#x27;auth&#x27;, &#x27;hostname&#x27;, &#x27;path&#x27;, &#x27;port&#x27;, &#x27;protocol&#x27;);
+
+  if (opts.baseUrl.path === &#x27;/&#x27;) {
+    opts.baseUrl.path = &#x27;&#x27;;
+  } else if (opts.baseUrl.path[opts.baseUrl.path.length - 1] === &#x27;/&#x27;) {
+    throw errors.Validation(&#x27;baseUrl must not end with a forward slash&#x27;);
+  }
+
+  opts.headers = utils.mergeHeaders(opts.headers);
+  opts.tags = opts.tags || [];
+
+  if (opts.name &#x26;&#x26; !~opts.tags.indexOf(opts.name)) {
+    opts.tags = opts.tags.concat(opts.name);
+  }
+
+  opts.encoders = utils.merge(constants.ENCODERS, opts.encoders);
+  opts.decoders = utils.merge(constants.DECODERS, opts.decoders);
+
+  this._opts = opts;
+  this._exts = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.walk" id="apidoc.element.jenkins.Jenkins.walk">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>walk
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">walk = function () {
+  return papi.tools.walk(Jenkins);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Walk methods
+ */
+
+Jenkins.meta.walk = { type: &#x27;sync&#x27; };
+
+Jenkins.walk = Jenkins.prototype.walk = function() {
+  return papi.tools.<span class="apidocCodeKeywordSpan">walk</span>(Jenkins);
+};
+
+/**
+ * Module exports.
+ */
+
+exports.Jenkins = Jenkins;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.Build" id="apidoc.module.jenkins.Jenkins.Build">module jenkins.Jenkins.Build</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Build.Build" id="apidoc.element.jenkins.Jenkins.Build.Build">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Build
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Build(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+papi.Client.call(this, opts);
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.<span class="apidocCodeKeywordSpan">Build</span>(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.Build.prototype" id="apidoc.module.jenkins.Jenkins.Build.prototype">module jenkins.Jenkins.Build.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Build.prototype.get" id="apidoc.element.jenkins.Jenkins.Build.prototype.get">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Build.prototype.</span>get
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+  var arg3 = typeof arguments[3];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; (arg1 === &#x27;string&#x27; || arg1 === &#x27;number&#x27;)) {
+    if (arg2 === &#x27;object&#x27;) {
+      opts = arguments[2];
+      callback = arg3 === &#x27;function&#x27; ? arguments[3] : undefined;
+    } else {
+      opts = {};
+      callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+    }
+
+    opts.name = arguments[0];
+    opts.number = arguments[1];
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;build&#x27;, &#x27;get&#x27;], opts);
+
+  var req = { name: &#x27;build.get&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+    if (!opts.number) throw new Error(&#x27;number required&#x27;);
+
+    req.path = &#x27;{folder}/{number}/api/json&#x27;;
+    req.params = {
+      folder: folder.path(),
+      number: opts.number,
+    };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._get(
+    req,
+    middleware.notFound(opts.name + &#x27; &#x27; + opts.number),
+    middleware.body,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     &#x22;url&#x22;: &#x22;http://localhost:8080/&#x22;
+   }
+ ]
+}
+```
+
+&#x3c;a name=&#x22;build-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.build.<span class="apidocCodeKeywordSpan">get</span>(options, callback)
+
+Get build information.
+
+Options
+
+* name (String): job name
+* number (Integer): build number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Build.prototype.log" id="apidoc.element.jenkins.Jenkins.Build.prototype.log">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Build.prototype.</span>log
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+  var arg3 = typeof arguments[3];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; (arg1 === &#x27;string&#x27; || arg1 === &#x27;number&#x27;)) {
+    if (arg2 === &#x27;object&#x27;) {
+      opts = arguments[2];
+      callback = arg3 === &#x27;function&#x27; ? arguments[3] : undefined;
+    } else {
+      opts = {};
+      callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+    }
+
+    opts.name = arguments[0];
+    opts.number = arguments[1];
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;build&#x27;, &#x27;log&#x27;], opts);
+
+  var req = { name: &#x27;build.log&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+    if (!opts.number) throw new Error(&#x27;number required&#x27;);
+
+    req.path = &#x27;{folder}/{number}/logText/progressive{type}&#x27;;
+    req.params = {
+      folder: folder.path(),
+      number: opts.number,
+      type: opts.type === &#x27;html&#x27; ? &#x27;Html&#x27; : &#x27;Text&#x27;,
+    };
+    req.type = &#x27;form&#x27;;
+    req.body = {};
+    if (opts.hasOwnProperty(&#x27;start&#x27;)) req.body.start = opts.start;
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name + &#x27; &#x27; + opts.number),
+    function(ctx, next) {
+      if (ctx.err) return next(ctx.err);
+      if (!opts.meta) return next(false, null, ctx.res.body);
+
+      var data = {
+        text: ctx.res.body,
+        more: ctx.res.headers[&#x27;x-more-data&#x27;] === &#x27;true&#x27;,
+      };
+
+      if (ctx.res.headers[&#x27;x-text-size&#x27;]) {
+        data.size = ctx.res.headers[&#x27;x-text-size&#x27;];
+      }
+
+      next(false, null, data);
+    },
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Usage
+
+``` javascript
+jenkins.info(function(err, data) {
+  if (err) throw err;
+
+  console.<span class="apidocCodeKeywordSpan">log</span>(&#x27;info&#x27;, data);
+});
+```
+
+Result
+
+``` json
+{
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Build.prototype.logStream" id="apidoc.element.jenkins.Jenkins.Build.prototype.logStream">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Build.prototype.</span>logStream
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logStream = function (opts) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; (arg1 === &#x27;string&#x27; || arg1 === &#x27;number&#x27;)) {
+    if (arg2 === &#x27;object&#x27;) {
+      opts = arguments[2];
+    } else {
+      opts = {};
+    }
+
+    opts.name = arguments[0];
+    opts.number = arguments[1];
+  } else {
+    opts = opts || {};
+  }
+
+  return new LogStream(this.jenkins, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (err) throw err;
+
+  console.log(&#x27;log&#x27;, data);
+});
+```
+
+&#x3c;a name=&#x22;build-log-stream&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.build.<span class="apidocCodeKeywordSpan">logStream</span>(options, callback)
+
+Get build log stream.
+
+Options
+
+* name (String): job name
+* number (Integer): build number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Build.prototype.stop" id="apidoc.element.jenkins.Jenkins.Build.prototype.stop">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Build.prototype.</span>stop
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; (arg1 === &#x27;string&#x27; || arg1 === &#x27;number&#x27;)) {
+    opts = {
+      name: arguments[0],
+      number: arguments[1],
+    };
+    callback = arguments[2];
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;build&#x27;, &#x27;stop&#x27;], opts);
+
+  var req = { name: &#x27;build.stop&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+    if (!opts.number) throw new Error(&#x27;number required&#x27;);
+
+    req.path = &#x27;{folder}/{number}/stop&#x27;;
+    req.params = {
+      folder: folder.path(),
+      number: opts.number,
+    };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name + &#x27; &#x27; + opts.number),
+    middleware.require302(&#x27;failed to stop: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+log.on(&#x27;end&#x27;, function() {
+ console.log(&#x27;end&#x27;);
+});
+```
+
+&#x3c;a name=&#x22;build-stop&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.build.<span class="apidocCodeKeywordSpan">stop</span>(options, callback)
+
+Stop build.
+
+Options
+
+* name (String): job name
+* number (Integer): build number
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.CrumbIssuer" id="apidoc.module.jenkins.Jenkins.CrumbIssuer">module jenkins.Jenkins.CrumbIssuer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.CrumbIssuer.CrumbIssuer" id="apidoc.element.jenkins.Jenkins.CrumbIssuer.CrumbIssuer">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>CrumbIssuer
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CrumbIssuer(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+papi.Client.call(this, opts);
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.<span class="apidocCodeKeywordSpan">CrumbIssuer</span>(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.CrumbIssuer.prototype" id="apidoc.module.jenkins.Jenkins.CrumbIssuer.prototype">module jenkins.Jenkins.CrumbIssuer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.CrumbIssuer.prototype.get" id="apidoc.element.jenkins.Jenkins.CrumbIssuer.prototype.get">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.CrumbIssuer.prototype.</span>get
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (opts, callback) {
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts;
+    opts = {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;crumbIssuer&#x27;, &#x27;get&#x27;], opts);
+
+  var req = {
+    name: &#x27;crumbIssuer.get&#x27;,
+    path: &#x27;/crumbIssuer/api/json&#x27;,
+  };
+
+  utils.options(req, opts);
+
+  return this.jenkins._get(req, middleware.body, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     &#x22;url&#x22;: &#x22;http://localhost:8080/&#x22;
+   }
+ ]
+}
+```
+
+&#x3c;a name=&#x22;build-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.build.<span class="apidocCodeKeywordSpan">get</span>(options, callback)
+
+Get build information.
+
+Options
+
+* name (String): job name
+* number (Integer): build number
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.Job" id="apidoc.module.jenkins.Jenkins.Job">module jenkins.Jenkins.Job</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.Job" id="apidoc.element.jenkins.Jenkins.Job.Job">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Job
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Job(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+papi.Client.call(this, opts);
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.<span class="apidocCodeKeywordSpan">Job</span>(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.Job.prototype" id="apidoc.module.jenkins.Jenkins.Job.prototype">module jenkins.Jenkins.Job.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.build" id="apidoc.element.jenkins.Jenkins.Job.prototype.build">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>build
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27;) {
+    if (arg1 === &#x27;object&#x27;) {
+      opts = arguments[1];
+      callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+    } else {
+      opts = {};
+      callback = arg1 === &#x27;function&#x27; ? arguments[1] : undefined;
+    }
+    opts.name = arguments[0];
+  }
+
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;build&#x27;], opts);
+
+  var req = { name: &#x27;job.build&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{folder}/build&#x27;;
+    req.params = { folder: folder.path() };
+
+    if (opts.parameters) {
+      req.path += &#x27;WithParameters&#x27;;
+      req.query = opts.parameters;
+    }
+
+    if (opts.token) req.query.token = opts.token;
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.queueLocation,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.build.stop(&#x27;example&#x27;, 1, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-build&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">build</span>(options, callback)
+
+Trigger build.
+
+Options
+
+* name (String): job name
+* parameters (Object, optional): build parameters
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.config" id="apidoc.element.jenkins.Jenkins.Job.prototype.config">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>config
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27;) {
+    opts = { name: arguments[0] };
+    if (arg1 === &#x27;string&#x27;) {
+      opts.xml = arguments[1];
+      callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+    } else {
+      callback = arg1 === &#x27;function&#x27; ? arguments[1] : undefined;
+    }
+  }
+
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;config&#x27;], opts);
+
+  var req = { name: &#x27;job.config&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{folder}/config.xml&#x27;;
+    req.params = { folder: folder.path() };
+
+    if (opts.xml) {
+      req.method = &#x27;POST&#x27;;
+      req.headers = { &#x27;content-type&#x27;: &#x27;text/xml&#x27; };
+      req.body = new Buffer(opts.xml);
+    } else {
+      req.method = &#x27;GET&#x27;;
+    }
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._request(
+    req,
+    middleware.notFound(&#x27;job &#x27; + opts.name),
+    function(ctx, next) {
+      if (ctx.err || opts.xml) return middleware.empty(ctx, next);
+
+      next(false, null, ctx.res.body.toString(&#x27;utf8&#x27;));
+    },
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.build({ name: &#x27;example&#x27;: parameters: { name: &#x27;value&#x27; } }, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-config-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">config</span>(options, callback)
+
+Get job XML configuration.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.copy" id="apidoc.element.jenkins.Jenkins.Job.prototype.copy">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>copy
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copy = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; arg1 === &#x27;string&#x27;) {
+    opts = {
+      from: arguments[0],
+      name: arguments[1],
+    };
+    callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+  }
+
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;copy&#x27;], opts);
+
+  var req = { name: &#x27;job.copy&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+    if (!opts.from) throw new Error(&#x27;from required&#x27;);
+
+    req.path = &#x27;{dir}/createItem&#x27;;
+    req.headers = { &#x27;content-type&#x27;: &#x27;text/xml&#x27; };
+    req.params = { dir: folder.dir() };
+    req.query.name = folder.name();
+    req.query.from = opts.from;
+    req.query.mode = &#x27;copy&#x27;;
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.require302(&#x27;failed to create: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.config(&#x27;example&#x27;, xml, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-config-copy&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">copy</span>(options, callback)
+
+Create job by copying existing job.
+
+Options
+
+* name (String): new job name
+* from (String): source job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.create" id="apidoc.element.jenkins.Jenkins.Job.prototype.create">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>create
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; arg1 === &#x27;string&#x27;) {
+    opts = {
+      name: arguments[0],
+      xml: arguments[1],
+    };
+    callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+  }
+
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;create&#x27;], opts);
+
+  var req = { name: &#x27;job.create&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+    if (!opts.xml) throw new Error(&#x27;xml required&#x27;);
+
+    req.path = &#x27;{dir}/createItem&#x27;;
+    req.headers = { &#x27;content-type&#x27;: &#x27;text/xml&#x27; };
+    req.params = { dir: folder.dir() };
+    req.query.name = folder.name();
+    req.body = new Buffer(opts.xml);
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(req, middleware.empty, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.copy(&#x27;fromJob&#x27;, &#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-create&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">create</span>(options, callback)
+
+Create job from scratch.
+
+Options
+
+* name (String): job name
+* xml (String): configuration XML
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.delete" id="apidoc.element.jenkins.Jenkins.Job.prototype.delete">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>delete
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;destroy&#x27;], opts);
+
+  var req = { name: &#x27;job.destroy&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{folder}/doDelete&#x27;;
+    req.params = { folder: folder.path() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to delete: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.destroy" id="apidoc.element.jenkins.Jenkins.Job.prototype.destroy">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;destroy&#x27;], opts);
+
+  var req = { name: &#x27;job.destroy&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{folder}/doDelete&#x27;;
+    req.params = { folder: folder.path() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to delete: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.create(&#x27;example&#x27;, xml, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-destroy&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">destroy</span>(options, callback)
+
+Delete job.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.disable" id="apidoc.element.jenkins.Jenkins.Job.prototype.disable">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>disable
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disable = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;disable&#x27;], opts);
+
+  var req = { name: &#x27;job.disable&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{folder}/disable&#x27;;
+    req.params = { folder: folder.path() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to disable: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.destroy(&#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-disable&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">disable</span>(options, callback)
+
+Disable job.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.enable" id="apidoc.element.jenkins.Jenkins.Job.prototype.enable">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>enable
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enable = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;enable&#x27;], opts);
+
+  var req = { name: &#x27;job.enable&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{folder}/enable&#x27;;
+    req.params = { folder: folder.path() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to enable: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.disable(&#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-enable&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">enable</span>(options, callback)
+
+Enable job.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.exists" id="apidoc.element.jenkins.Jenkins.Job.prototype.exists">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>exists
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;exists&#x27;], opts);
+
+  var req = { name: &#x27;job.exists&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{folder}/api/json&#x27;;
+    req.params = { folder: folder.path() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._head(req, middleware.exists, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.enable(&#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-exists&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">exists</span>(options, callback)
+
+Check job exists.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.get" id="apidoc.element.jenkins.Jenkins.Job.prototype.get">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>get
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27;) {
+    if (arg1 === &#x27;object&#x27;) {
+      opts = arguments[1];
+      callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+    } else {
+      opts = {};
+      callback = arg1 === &#x27;function&#x27; ? arguments[1] : undefined;
+    }
+    opts.name = arguments[0];
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;get&#x27;], opts);
+
+  var req = { name: &#x27;job.get&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{folder}/api/json&#x27;;
+    req.params = { folder: folder.path() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._get(
+    req,
+    middleware.notFound(opts.name),
+    middleware.body,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     &#x22;url&#x22;: &#x22;http://localhost:8080/&#x22;
+   }
+ ]
+}
+```
+
+&#x3c;a name=&#x22;build-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.build.<span class="apidocCodeKeywordSpan">get</span>(options, callback)
+
+Get build information.
+
+Options
+
+* name (String): job name
+* number (Integer): build number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Job.prototype.list" id="apidoc.element.jenkins.Jenkins.Job.prototype.list">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Job.prototype.</span>list
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function (opts, callback) {
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts;
+    opts = {};
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;list&#x27;], opts);
+
+  var req = {
+    name: &#x27;job.list&#x27;,
+    path: &#x27;/api/json&#x27;,
+  };
+
+  utils.options(req, opts);
+
+  return this.jenkins._get(
+    req,
+    function(ctx, next) {
+      if (ctx.err) return next();
+
+      if (!ctx.res.body || !Array.isArray(ctx.res.body.jobs)) {
+        ctx.err = new Error(&#x27;returned bad data&#x27;);
+      }
+
+      next();
+    },
+    middleware.bodyItem(&#x27;jobs&#x27;),
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x22;scm&#x22;: {},
+  &#x22;upstreamProjects&#x22;: [],
+  &#x22;url&#x22;: &#x22;http://localhost:8080/job/example/&#x22;
+}
+```
+
+&#x3c;a name=&#x22;job-list&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">list</span>(callback)
+
+List all jobs.
+
+Usage
+
+``` javascript
+jenkins.job.list(function(err, data) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.Node" id="apidoc.module.jenkins.Jenkins.Node">module jenkins.Jenkins.Node</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.Node" id="apidoc.element.jenkins.Jenkins.Node.Node">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Node
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Node(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.<span class="apidocCodeKeywordSpan">Node</span>(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+      papi.tools.promisify(this, opts.promisify);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.Node.prototype" id="apidoc.module.jenkins.Jenkins.Node.prototype">module jenkins.Jenkins.Node.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.changeOfflineCause" id="apidoc.element.jenkins.Jenkins.Node.prototype.changeOfflineCause">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>changeOfflineCause
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">changeOfflineCause = function (opts, callback) {
+  opts = opts || {};
+
+  opts.message = opts.message || &#x27;&#x27;;
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;changeOfflineCause&#x27;], opts);
+
+  var req = { name: &#x27;node.changeOfflineCause&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.name) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;/computer/{name}/changeOfflineCause&#x27;;
+    req.params = { name: opts.name };
+    req.type = &#x27;form&#x27;;
+    req.body = {
+      offlineMessage: opts.message,
+      json: JSON.stringify({
+        offlineMessage: opts.message,
+      }),
+      Submit: &#x27;Update reason&#x27;,
+    };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to update offline message: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  self.get(opts.name, function(err, node) {
+if (err) return callback(err);
+
+if (node &#x26;&#x26; node.temporarilyOffline) {
+  if (node.offlineCauseReason !== opts.message) {
+    return self.<span class="apidocCodeKeywordSpan">changeOfflineCause</span>({
+      name: opts.name,
+      message: opts.message,
+    }, callback);
+  }
+
+  return callback();
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.config" id="apidoc.element.jenkins.Jenkins.Node.prototype.config">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>config
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27;) {
+    opts = { name: arguments[0] };
+    if (arg1 === &#x27;string&#x27;) {
+      opts.xml = arguments[1];
+      callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+    } else {
+      callback = arg1 === &#x27;function&#x27; ? arguments[1] : undefined;
+    }
+  }
+
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;config&#x27;], opts);
+
+  var req = { name: &#x27;node.config&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.name) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;/computer/{name}/config.xml&#x27;;
+    req.params = {
+      name: opts.name === &#x27;master&#x27; ? &#x27;(master)&#x27; : opts.name,
+    };
+
+    if (opts.xml) {
+      if (opts.name === &#x27;master&#x27;) {
+        throw new Error(&#x27;master not supported&#x27;);
+      }
+
+      req.method = &#x27;POST&#x27;;
+      req.headers = { &#x27;content-type&#x27;: &#x27;text/xml&#x27; };
+      req.body = new Buffer(opts.xml);
+    } else {
+      req.method = &#x27;GET&#x27;;
+    }
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._request(
+    req,
+    middleware.notFound(&#x27;node &#x27; + opts.name),
+    function(ctx, next) {
+      if (ctx.err || opts.xml) return middleware.empty(ctx, next);
+
+      next(false, null, ctx.res.body.toString(&#x27;utf8&#x27;));
+    },
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.build({ name: &#x27;example&#x27;: parameters: { name: &#x27;value&#x27; } }, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-config-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">config</span>(options, callback)
+
+Get job XML configuration.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.create" id="apidoc.element.jenkins.Jenkins.Node.prototype.create">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>create
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27;) {
+    if (arg1 === &#x27;object&#x27;) {
+      opts = arguments[1];
+      callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+    } else {
+      opts = {};
+      callback = arg1 === &#x27;function&#x27; ? arguments[1] : undefined;
+    }
+    opts.name = arguments[0];
+  } else {
+    opts = opts || {};
+  }
+
+  opts.type = opts.type || &#x27;hudson.slaves.DumbSlave$DescriptorImpl&#x27;;
+  opts.retentionStrategy = opts.retentionStrategy ||
+    { &#x27;stapler-class&#x27;: &#x27;hudson.slaves.RetentionStrategy$Always&#x27; };
+  opts.nodeProperties = opts.nodeProperties || { &#x27;stapler-class-bag&#x27;: &#x27;true&#x27; };
+  opts.launcher = opts.launcher ||
+    { &#x27;stapler-class&#x27;: &#x27;hudson.slaves.JNLPLauncher&#x27; };
+  opts.numExecutors = opts.hasOwnProperty(&#x27;numExecutors&#x27;) ?
+    opts.numExecutors : 2;
+  opts.remoteFS = opts.remoteFS || &#x27;/var/lib/jenkins&#x27;;
+  opts.mode = opts.mode || (opts.exclusive ? &#x27;EXCLUSIVE&#x27; : &#x27;NORMAL&#x27;);
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;create&#x27;], opts);
+
+  var req = { name: &#x27;node.create&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.name) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;/computer/doCreateItem&#x27;;
+    req.query.name = opts.name;
+    req.query.type = opts.type;
+    req.query.json = JSON.stringify({
+      name: opts.name,
+      nodeDescription: opts.nodeDescription,
+      numExecutors: opts.numExecutors,
+      remoteFS: opts.remoteFS,
+      labelString: opts.labelString,
+      mode: opts.mode,
+      type: opts.type,
+      retentionStrategy: opts.retentionStrategy,
+      nodeProperties: opts.nodeProperties,
+      launcher: opts.launcher,
+    });
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.require302(&#x27;failed to create: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.copy(&#x27;fromJob&#x27;, &#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-create&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">create</span>(options, callback)
+
+Create job from scratch.
+
+Options
+
+* name (String): job name
+* xml (String): configuration XML
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.delete" id="apidoc.element.jenkins.Jenkins.Node.prototype.delete">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>delete
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;destroy&#x27;], opts);
+
+  var req = { name: &#x27;node.destroy&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.name) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;/computer/{name}/doDelete&#x27;;
+    req.params = { name: opts.name };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to delete: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.destroy" id="apidoc.element.jenkins.Jenkins.Node.prototype.destroy">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;destroy&#x27;], opts);
+
+  var req = { name: &#x27;node.destroy&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.name) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;/computer/{name}/doDelete&#x27;;
+    req.params = { name: opts.name };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to delete: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.create(&#x27;example&#x27;, xml, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-destroy&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">destroy</span>(options, callback)
+
+Delete job.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.disable" id="apidoc.element.jenkins.Jenkins.Node.prototype.disable">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>disable
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disable = function (opts, callback) {
+  var self = this;
+
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; arg1 === &#x27;string&#x27;) {
+    opts = {
+      name: arguments[0],
+      message: arguments[1],
+    };
+    callback = arguments[2];
+  } else if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  self.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;disable&#x27;], opts);
+
+  if (!opts.name) {
+    return callback(this.jenkins._err(&#x27;name required&#x27;, { name: &#x27;node.disable&#x27; }));
+  }
+
+  self.get(opts.name, function(err, node) {
+    if (err) return callback(err);
+
+    if (node &#x26;&#x26; node.temporarilyOffline) {
+      if (node.offlineCauseReason !== opts.message) {
+        return self.changeOfflineCause({
+          name: opts.name,
+          message: opts.message,
+        }, callback);
+      }
+
+      return callback();
+    }
+
+    self.toggleOffline({ name: opts.name, message: opts.message }, function(err) {
+      if (err) return callback(err);
+
+      callback();
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.destroy(&#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-disable&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">disable</span>(options, callback)
+
+Disable job.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.disconnect" id="apidoc.element.jenkins.Jenkins.Node.prototype.disconnect">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function (opts, callback) {
+  var self = this;
+
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; arg1 === &#x27;string&#x27;) {
+    opts = {
+      name: arguments[0],
+      message: arguments[1],
+    };
+    callback = arguments[2];
+  } else if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  self.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;disconnect&#x27;], opts);
+
+  if (!opts.name) {
+    return callback(this.jenkins._err(&#x27;name required&#x27;, { name: &#x27;node.disconnect&#x27; }));
+  }
+
+  self.get(opts.name, function(err, node) {
+    if (err) return callback(err);
+
+    if (node &#x26;&#x26; node.offline) {
+      return self.toggleOffline({ name: opts.name, message: opts.message }, function(err) {
+        if (err) return callback(err);
+
+        callback();
+      });
+    }
+
+    self.doDisconnect({ name: opts.name, message: opts.message }, function(err) {
+      if (err) return callback(err);
+
+      callback();
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.node.destroy(&#x27;slave&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;node-disconnect&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.node.<span class="apidocCodeKeywordSpan">disconnect</span>(options, callback)
+
+Disconnect node.
+
+Options
+
+* name (String): node name
+* message (String, optional): reason for being disconnected
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.doDisconnect" id="apidoc.element.jenkins.Jenkins.Node.prototype.doDisconnect">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>doDisconnect
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doDisconnect = function (opts, callback) {
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;doDisconnect&#x27;], opts);
+
+  var req = { name: &#x27;node.doDisconnect&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.name) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;/computer/{name}/doDisconnect&#x27;;
+    req.params = { name: opts.name };
+    req.query.offlineMessage = opts.message || &#x27;&#x27;;
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+      req,
+      middleware.notFound(opts.name),
+      middleware.require302(&#x27;failed to disconnect: &#x27; + opts.name),
+      middleware.empty,
+      callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return self.toggleOffline({ name: opts.name, message: opts.message }, function(err) {
+        if (err) return callback(err);
+
+        callback();
+      });
+    }
+
+    self.<span class="apidocCodeKeywordSpan">doDisconnect</span>({ name: opts.name, message: opts.message }, function(err) {
+      if (err) return callback(err);
+
+      callback();
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.enable" id="apidoc.element.jenkins.Jenkins.Node.prototype.enable">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>enable
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enable = function (opts, callback) {
+  var self = this;
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  self.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;enable&#x27;], opts);
+
+  if (!opts.name) {
+    return callback(this.jenkins._err(&#x27;name required&#x27;, { name: &#x27;node.enable&#x27; }));
+  }
+
+  self.get(opts.name, function(err, node) {
+    if (err) return callback(err);
+
+    if (!node.temporarilyOffline) return callback();
+
+    self.toggleOffline({ name: opts.name, message: &#x27;&#x27; }, function(err) {
+      if (err) callback(err);
+
+      callback();
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.disable(&#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-enable&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">enable</span>(options, callback)
+
+Enable job.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.exists" id="apidoc.element.jenkins.Jenkins.Node.prototype.exists">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>exists
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;build&#x27;, &#x27;exists&#x27;], opts);
+
+  var req = { name: &#x27;node.exists&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.name) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;/computer/{name}/api/json&#x27;;
+    req.params = {
+      name: opts.name === &#x27;master&#x27; ? &#x27;(master)&#x27; : opts.name,
+    };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._head(req, middleware.exists, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.enable(&#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-exists&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">exists</span>(options, callback)
+
+Check job exists.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.get" id="apidoc.element.jenkins.Jenkins.Node.prototype.get">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>get
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;get&#x27;], opts);
+
+  var req = { name: &#x27;node.get&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.name) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;/computer/{name}/api/json&#x27;;
+    req.params = {
+      name: opts.name === &#x27;master&#x27; ? &#x27;(master)&#x27; : opts.name,
+    };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._get(
+    req,
+    middleware.notFound(opts.name),
+    middleware.body,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     &#x22;url&#x22;: &#x22;http://localhost:8080/&#x22;
+   }
+ ]
+}
+```
+
+&#x3c;a name=&#x22;build-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.build.<span class="apidocCodeKeywordSpan">get</span>(options, callback)
+
+Get build information.
+
+Options
+
+* name (String): job name
+* number (Integer): build number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.list" id="apidoc.element.jenkins.Jenkins.Node.prototype.list">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>list
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function (opts, callback) {
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts;
+    opts = {};
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;list&#x27;], opts);
+
+  var req = {
+    name: &#x27;node.list&#x27;,
+    path: &#x27;/computer/api/json&#x27;,
+  };
+
+  utils.options(req, opts);
+
+  if (opts.full === true) {
+    return this.jenkins._get(
+      req,
+      middleware.body,
+      callback
+    );
+  } else {
+    return this.jenkins._get(
+      req,
+      middleware.bodyItem(&#x27;computer&#x27;),
+      callback
+    );
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x22;scm&#x22;: {},
+  &#x22;upstreamProjects&#x22;: [],
+  &#x22;url&#x22;: &#x22;http://localhost:8080/job/example/&#x22;
+}
+```
+
+&#x3c;a name=&#x22;job-list&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">list</span>(callback)
+
+List all jobs.
+
+Usage
+
+``` javascript
+jenkins.job.list(function(err, data) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Node.prototype.toggleOffline" id="apidoc.element.jenkins.Jenkins.Node.prototype.toggleOffline">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Node.prototype.</span>toggleOffline
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toggleOffline = function (opts, callback) {
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;node&#x27;, &#x27;toggleOffline&#x27;], opts);
+
+  var req = { name: &#x27;node.toggleOffline&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.name) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;/computer/{name}/toggleOffline&#x27;;
+    req.params = { name: opts.name };
+    req.query.offlineMessage = opts.message || &#x27;&#x27;;
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to toggle offline: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return callback(this.jenkins._err(&#x27;name required&#x27;, { name: &#x27;node.disconnect&#x27; }));
+  }
+
+  self.get(opts.name, function(err, node) {
+if (err) return callback(err);
+
+if (node &#x26;&#x26; node.offline) {
+  return self.<span class="apidocCodeKeywordSpan">toggleOffline</span>({ name: opts.name, message: opts.message }, function(err) {
+    if (err) return callback(err);
+
+    callback();
+  });
+}
+
+self.doDisconnect({ name: opts.name, message: opts.message }, function(err) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.Queue" id="apidoc.module.jenkins.Jenkins.Queue">module jenkins.Jenkins.Queue</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Queue.Queue" id="apidoc.element.jenkins.Jenkins.Queue.Queue">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>Queue
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Queue(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.<span class="apidocCodeKeywordSpan">Queue</span>(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+      papi.tools.promisify(this, opts.promisify);
+    } else {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.Queue.prototype" id="apidoc.module.jenkins.Jenkins.Queue.prototype">module jenkins.Jenkins.Queue.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Queue.prototype.cancel" id="apidoc.element.jenkins.Jenkins.Queue.prototype.cancel">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Queue.prototype.</span>cancel
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancel = function (opts, callback) {
+  if (typeof opts !== &#x27;object&#x27;) {
+    opts = { number: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;queue&#x27;, &#x27;cancel&#x27;], opts);
+
+  var req = { name: &#x27;queue.cancel&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    if (!opts.number) throw new Error(&#x27;number required&#x27;);
+
+    req.path = &#x27;/queue/item/{number}/cancelQueue&#x27;;
+    req.params = { number: opts.number };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.require302(&#x27;failed to cancel: &#x27; + opts.number),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ }
+}
+```
+
+
+
+&#x3c;a name=&#x22;queue-cancel&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.queue.<span class="apidocCodeKeywordSpan">cancel</span>(options, callback)
+
+Cancel build in queue.
+
+Options
+
+* number (Integer): queue item id
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Queue.prototype.get" id="apidoc.element.jenkins.Jenkins.Queue.prototype.get">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Queue.prototype.</span>get
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (opts, callback) {
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts;
+    opts = {};
+  } else {
+    opts = opts || {};
+  }
+
+  this.list(opts, function(err, data) {
+    if (err) return callback(err);
+
+    callback(err, { items: data });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     &#x22;url&#x22;: &#x22;http://localhost:8080/&#x22;
+   }
+ ]
+}
+```
+
+&#x3c;a name=&#x22;build-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.build.<span class="apidocCodeKeywordSpan">get</span>(options, callback)
+
+Get build information.
+
+Options
+
+* name (String): job name
+* number (Integer): build number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Queue.prototype.item" id="apidoc.element.jenkins.Jenkins.Queue.prototype.item">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Queue.prototype.</span>item
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">item = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+
+  if (arg0 === &#x27;function&#x27;) {
+    callback = opts;
+    opts = {};
+  } else {
+    if (arg0 === &#x27;string&#x27; || arg0 === &#x27;number&#x27;) {
+      opts = {
+        number: opts
+      };
+    }
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;queue&#x27;, &#x27;item&#x27;], opts);
+
+  var req = {
+    name: &#x27;queue.item&#x27;,
+    path: &#x27;/queue/item/{number}/api/json&#x27;,
+    params: {
+      number: opts.number
+    }
+  };
+
+  utils.options(req, opts);
+
+  if (!opts.number) {
+    return callback(this.jenkins._err(new Error(&#x27;number required&#x27;), req));
+  }
+
+  return this.jenkins._get(req, middleware.body, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     &#x22;why&#x22;: &#x22;Build #2 is already in progress (ETA:N/A)&#x22;
+   }
+ ]
+}
+```
+
+&#x3c;a name=&#x22;queue-item&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.queue.<span class="apidocCodeKeywordSpan">item</span>(options, callback)
+
+Lookup a queue item.
+
+Options
+
+* number (Integer): queue item number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.Queue.prototype.list" id="apidoc.element.jenkins.Jenkins.Queue.prototype.list">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.Queue.prototype.</span>list
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function (opts, callback) {
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts;
+    opts = {};
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;queue&#x27;, &#x27;list&#x27;], opts);
+
+  var req = {
+    name: &#x27;queue.list&#x27;,
+    path: &#x27;/queue/api/json&#x27;,
+  };
+
+  utils.options(req, opts);
+
+  return this.jenkins._get(req, middleware.bodyItem(&#x27;items&#x27;), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x22;scm&#x22;: {},
+  &#x22;upstreamProjects&#x22;: [],
+  &#x22;url&#x22;: &#x22;http://localhost:8080/job/example/&#x22;
+}
+```
+
+&#x3c;a name=&#x22;job-list&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">list</span>(callback)
+
+List all jobs.
+
+Usage
+
+``` javascript
+jenkins.job.list(function(err, data) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.View" id="apidoc.module.jenkins.Jenkins.View">module jenkins.Jenkins.View</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.View" id="apidoc.element.jenkins.Jenkins.View.View">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>View
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function View(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.<span class="apidocCodeKeywordSpan">View</span>(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+      papi.tools.promisify(this, opts.promisify);
+    } else {
+      papi.tools.promisify(this);
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.View.prototype" id="apidoc.module.jenkins.Jenkins.View.prototype">module jenkins.Jenkins.View.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.prototype.add" id="apidoc.element.jenkins.Jenkins.View.prototype.add">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>add
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; arg1 === &#x27;string&#x27;) {
+    opts = {
+      name: arguments[0],
+      job: arguments[1],
+    };
+    callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+  }
+
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;view&#x27;, &#x27;add&#x27;], opts);
+
+  var req = {
+    path: &#x27;{dir}/view/{name}/addJobToView&#x27;,
+    query: { name: opts.job },
+    type: &#x27;form&#x27;,
+    name: &#x27;view.add&#x27;,
+    body: {},
+  };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+    if (!opts.job) throw new Error(&#x27;job required&#x27;);
+
+    req.params = { dir: folder.dir(), name: folder.name() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   }
+ ],
+ &#x22;overallLoad&#x22;: {}
+}
+```
+
+&#x3c;a name=&#x22;view-add&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.view.<span class="apidocCodeKeywordSpan">add</span>(options, callback)
+
+Add job to view.
+
+Options
+
+* name (String): view name
+* job (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.prototype.config" id="apidoc.element.jenkins.Jenkins.View.prototype.config">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>config
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27;) {
+    opts = { name: arguments[0] };
+    if (arg1 === &#x27;string&#x27;) {
+      opts.xml = arguments[1];
+      callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+    } else {
+      callback = arg1 === &#x27;function&#x27; ? arguments[1] : undefined;
+    }
+  }
+
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;view&#x27;, &#x27;config&#x27;], opts);
+
+  var req = {
+    path: &#x27;{dir}/view/{name}/config.xml&#x27;,
+    name: &#x27;view.config&#x27;,
+  };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.params = { dir: folder.dir(), name: folder.name() };
+
+    if (opts.xml) {
+      req.method = &#x27;POST&#x27;;
+      req.headers = { &#x27;content-type&#x27;: &#x27;text/xml&#x27; };
+      req.body = new Buffer(opts.xml);
+    } else {
+      req.method = &#x27;GET&#x27;;
+    }
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._request(
+    req,
+    middleware.notFound(&#x27;view &#x27; + opts.name),
+    function(ctx, next) {
+      if (ctx.err || opts.xml) return middleware.empty(ctx, next);
+
+      next(false, null, ctx.res.body.toString(&#x27;utf8&#x27;));
+    },
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.build({ name: &#x27;example&#x27;: parameters: { name: &#x27;value&#x27; } }, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-config-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">config</span>(options, callback)
+
+Get job XML configuration.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.prototype.create" id="apidoc.element.jenkins.Jenkins.View.prototype.create">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>create
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; arg1 === &#x27;string&#x27;) {
+    opts = {
+      name: arguments[0],
+      type: arguments[1],
+    };
+    callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+  } else if (arg0 === &#x27;string&#x27;) {
+    opts = {
+      name: arguments[0],
+      type: &#x27;list&#x27;,
+    };
+  }
+
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;view&#x27;, &#x27;create&#x27;], opts);
+
+  var req = { name: &#x27;view.create&#x27; };
+
+  utils.options(req, opts);
+
+  var shortcuts = {
+    list: &#x27;hudson.model.ListView&#x27;,
+    my: &#x27;hudson.model.MyView&#x27;,
+  };
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+    var mode = shortcuts[opts.type] || opts.type;
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+    if (!opts.type) throw new Error(&#x27;type required&#x27;);
+
+    req.path = &#x27;{dir}/createView&#x27;;
+    req.type = &#x27;form&#x27;;
+    req.params = { dir: folder.dir() };
+    req.body = {
+      name: folder.name(),
+      mode: mode,
+      json: JSON.stringify({
+        name: folder.name(),
+        mode: mode,
+      }),
+    };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.require302(&#x27;failed to create: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.copy(&#x27;fromJob&#x27;, &#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-create&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">create</span>(options, callback)
+
+Create job from scratch.
+
+Options
+
+* name (String): job name
+* xml (String): configuration XML
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.prototype.delete" id="apidoc.element.jenkins.Jenkins.View.prototype.delete">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>delete
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;view&#x27;, &#x27;destroy&#x27;], opts);
+
+  var req = { name: &#x27;view.destroy&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{dir}/view/{name}/doDelete&#x27;;
+    req.params = { dir: folder.dir(), name: folder.name() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to delete: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.prototype.destroy" id="apidoc.element.jenkins.Jenkins.View.prototype.destroy">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;view&#x27;, &#x27;destroy&#x27;], opts);
+
+  var req = { name: &#x27;view.destroy&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{dir}/view/{name}/doDelete&#x27;;
+    req.params = { dir: folder.dir(), name: folder.name() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.notFound(opts.name),
+    middleware.require302(&#x27;failed to delete: &#x27; + opts.name),
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.create(&#x27;example&#x27;, xml, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-destroy&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">destroy</span>(options, callback)
+
+Delete job.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.prototype.exists" id="apidoc.element.jenkins.Jenkins.View.prototype.exists">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>exists
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (opts, callback) {
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;view&#x27;, &#x27;exists&#x27;], opts);
+
+  var req = { name: &#x27;view.exists&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{dir}/view/{name}/api/json&#x27;;
+    req.params = { dir: folder.dir(), name: folder.name() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._head(req, middleware.exists, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.enable(&#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-exists&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">exists</span>(options, callback)
+
+Check job exists.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.prototype.get" id="apidoc.element.jenkins.Jenkins.View.prototype.get">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>get
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27;) {
+    if (arg1 === &#x27;object&#x27;) {
+      opts = arguments[1];
+      callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+    } else {
+      opts = {};
+      callback = arg1 === &#x27;function&#x27; ? arguments[1] : undefined;
+    }
+    opts.name = arguments[0];
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;view&#x27;, &#x27;get&#x27;], opts);
+
+  var req = { name: &#x27;view.get&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+    req.path = &#x27;{dir}/view/{name}/api/json&#x27;;
+    req.params = { dir: folder.dir(), name: folder.name() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._get(
+    req,
+    middleware.notFound(opts.name),
+    middleware.body,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     &#x22;url&#x22;: &#x22;http://localhost:8080/&#x22;
+   }
+ ]
+}
+```
+
+&#x3c;a name=&#x22;build-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.build.<span class="apidocCodeKeywordSpan">get</span>(options, callback)
+
+Get build information.
+
+Options
+
+* name (String): job name
+* number (Integer): build number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.prototype.list" id="apidoc.element.jenkins.Jenkins.View.prototype.list">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>list
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function (opts, callback) {
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts;
+    opts = {};
+  } else if (typeof opts === &#x27;string&#x27;) {
+    opts = { name: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;view&#x27;, &#x27;list&#x27;], opts);
+
+  var req = {
+    name: &#x27;view.list&#x27;,
+    path: &#x27;{folder}/api/json&#x27;,
+  };
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    req.params = { folder: folder.path() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  utils.options(req, opts);
+
+  return this.jenkins._get(
+    req,
+    function(ctx, next) {
+      if (ctx.err) return next();
+
+      if (!ctx.res.body || !Array.isArray(ctx.res.body.views)) {
+        ctx.err = new Error(&#x27;returned bad data&#x27;);
+      }
+
+      next();
+    },
+    middleware.bodyItem(&#x27;views&#x27;),
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x22;scm&#x22;: {},
+  &#x22;upstreamProjects&#x22;: [],
+  &#x22;url&#x22;: &#x22;http://localhost:8080/job/example/&#x22;
+}
+```
+
+&#x3c;a name=&#x22;job-list&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">list</span>(callback)
+
+List all jobs.
+
+Usage
+
+``` javascript
+jenkins.job.list(function(err, data) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.View.prototype.remove" id="apidoc.element.jenkins.Jenkins.View.prototype.remove">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.View.prototype.</span>remove
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (opts, callback) {
+  var arg0 = typeof arguments[0];
+  var arg1 = typeof arguments[1];
+  var arg2 = typeof arguments[2];
+
+  if (arg0 === &#x27;string&#x27; &#x26;&#x26; arg1 === &#x27;string&#x27;) {
+    opts = {
+      name: arguments[0],
+      job: arguments[1],
+    };
+    callback = arg2 === &#x27;function&#x27; ? arguments[2] : undefined;
+  }
+
+  opts = opts || {};
+
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;view&#x27;, &#x27;remove&#x27;], opts);
+
+  var req = {
+    path: &#x27;{dir}/view/{name}/removeJobFromView&#x27;,
+    query: { name: opts.job },
+    type: &#x27;form&#x27;,
+    name: &#x27;view.remove&#x27;,
+    body: {},
+  };
+
+  utils.options(req, opts);
+
+  try {
+    var folder = utils.FolderPath(opts.name);
+
+    if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+    if (!opts.job) throw new Error(&#x27;job required&#x27;);
+
+    req.params = { dir: folder.dir(), name: folder.name() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._post(
+    req,
+    middleware.empty,
+    callback
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.view.add(&#x27;example&#x27;, &#x27;jobExample&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;view-remove&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.view.<span class="apidocCodeKeywordSpan">remove</span>(options, callback)
+
+Remove job from view.
+
+Options
+
+* name (String): view name
+* job (String): job name
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.prototype" id="apidoc.module.jenkins.Jenkins.prototype">module jenkins.Jenkins.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.prototype._onCreate" id="apidoc.element.jenkins.Jenkins.prototype._onCreate">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>_onCreate
+        <span class="apidocSignatureSpan">(ctx, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_onCreate = function (ctx, next) {
+  if (!this._crumbIssuer || ctx.opts.method !== &#x27;POST&#x27;) return next();
+
+  this._crumbIssuer(this, function(err, data) {
+    if (err) return next(err);
+
+    if (data.headerName &#x26;&#x26; data.headerValue) {
+      if (!ctx.opts.headers) ctx.opts.headers = {};
+      ctx.opts.headers[data.headerName] = data.headerValue;
+    }
+
+    next();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.prototype._onResponse" id="apidoc.element.jenkins.Jenkins.prototype._onResponse">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>_onResponse
+        <span class="apidocSignatureSpan">(ctx, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_onResponse = function (ctx, next) {
+  if (ctx.err) {
+    if (ctx.res &#x26;&#x26; ctx.res.headers &#x26;&#x26; ctx.res.headers[&#x27;x-error&#x27;]) {
+      ctx.err.message = ctx.res.headers[&#x27;x-error&#x27;].replace(/\?/g, &#x27;&#x22;&#x27;);
+    }
+    ctx.err.res = ctx.res;
+  }
+
+  next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.prototype.get" id="apidoc.element.jenkins.Jenkins.prototype.get">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>get
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (opts, callback) {
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts;
+    opts = {};
+  }
+
+  this._log([&#x27;debug&#x27;, &#x27;info&#x27;], opts);
+
+  var req = {
+    name: &#x27;info&#x27;,
+    path: &#x27;/api/json&#x27;,
+  };
+
+  utils.options(req, opts);
+
+  return this._get(req, middleware.body, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     &#x22;url&#x22;: &#x22;http://localhost:8080/&#x22;
+   }
+ ]
+}
+```
+
+&#x3c;a name=&#x22;build-get&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.build.<span class="apidocCodeKeywordSpan">get</span>(options, callback)
+
+Get build information.
+
+Options
+
+* name (String): job name
+* number (Integer): build number
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.prototype.info" id="apidoc.element.jenkins.Jenkins.prototype.info">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>info
+        <span class="apidocSignatureSpan">(opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function (opts, callback) {
+  if (typeof opts === &#x27;function&#x27;) {
+    callback = opts;
+    opts = {};
+  }
+
+  this._log([&#x27;debug&#x27;, &#x27;info&#x27;], opts);
+
+  var req = {
+    name: &#x27;info&#x27;,
+    path: &#x27;/api/json&#x27;,
+  };
+
+  utils.options(req, opts);
+
+  return this._get(req, middleware.body, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Usage
+
+``` javascript
+var jenkins = require(&#x27;jenkins&#x27;)({ baseUrl: &#x27;http://user:pass@localhost:8080&#x27;, crumbIssuer: true });
+```
+
+&#x3c;a name=&#x22;info&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.<span class="apidocCodeKeywordSpan">info</span>(callback)
+
+Get server information.
+
+Usage
+
+``` javascript
+jenkins.info(function(err, data) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.prototype.walk" id="apidoc.element.jenkins.Jenkins.prototype.walk">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.prototype.</span>walk
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">walk = function () {
+  return papi.tools.walk(Jenkins);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Walk methods
+ */
+
+Jenkins.meta.walk = { type: &#x27;sync&#x27; };
+
+Jenkins.walk = Jenkins.prototype.walk = function() {
+  return papi.tools.<span class="apidocCodeKeywordSpan">walk</span>(Jenkins);
+};
+
+/**
+ * Module exports.
+ */
+
+exports.Jenkins = Jenkins;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.super_" id="apidoc.module.jenkins.Jenkins.super_">module jenkins.Jenkins.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.super_" id="apidoc.element.jenkins.Jenkins.super_.super_">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.Jenkins.super_.prototype" id="apidoc.module.jenkins.Jenkins.super_.prototype">module jenkins.Jenkins.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype.__create" id="apidoc.element.jenkins.Jenkins.super_.prototype.__create">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>__create
+        <span class="apidocSignatureSpan">(request, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__create = function (request, next) {
+  var self = this;
+
+  var opts = request.opts;
+  var path = opts.path;
+
+  if (typeof path !== &#x27;string&#x27;) {
+    return next(errors.Validation(&#x27;path required&#x27;));
+  }
+
+  var headers = utils.mergeHeaders(self._opts.headers, opts.headers);
+
+  // path
+  try {
+    path = path.replace(/\{(\w+)\}/g, function(src, dst) {
+      if (!opts.params.hasOwnProperty(dst)) {
+        throw errors.Validation(&#x27;missing param: &#x27; + dst);
+      }
+
+      var part = opts.params[dst] || &#x27;&#x27;;
+
+      // optionally disable param encoding
+      return part.encode === false &#x26;&#x26; part.toString ?
+        part.toString() : encodeURIComponent(part);
+    });
+  } catch (err) {
+    return next(err);
+  }
+
+  // query
+  if (!utils.isEmpty(opts.query)) {
+    try {
+      path += &#x27;?&#x27; + self._encode(&#x27;application/x-www-form-urlencoded&#x27;,
+                                 opts.query).toString();
+    } catch (err) {
+      return next(err);
+    }
+  }
+
+  // body
+  if (opts.body !== undefined) {
+    var mime = constants.MIME_ALIAS[opts.type] ||
+      headers[&#x27;content-type&#x27;] ||
+      constants.MIME_ALIAS[self._opts.type];
+
+    var isFunction = typeof opts.body === &#x27;function&#x27;;
+
+    if (isFunction) {
+      try {
+        request.body = opts.body();
+      } catch (err) {
+        return next(err);
+      }
+    } else {
+      request.body = opts.body;
+    }
+
+    var isBuffer = Buffer.isBuffer(request.body);
+    var isStream = utils.isReadableStream(request.body);
+
+    if (!isBuffer &#x26;&#x26; !isStream &#x26;&#x26; !mime) {
+      return next(errors.Validation(&#x27;type required&#x27;));
+    }
+
+    if (!isBuffer &#x26;&#x26; !isStream) {
+      if (self._opts.encoders[mime]) {
+        try {
+          request.body = this._encode(mime, request.body);
+        } catch (err) {
+          return next(err);
+        }
+      } else {
+        return next(errors.Codec(&#x27;type is unknown: &#x27; + mime));
+      }
+    }
+
+    if (!headers[&#x27;content-type&#x27;] &#x26;&#x26; mime) {
+      headers[&#x27;content-type&#x27;] = mime + &#x27;; charset=&#x27; + constants.CHARSET;
+    }
+
+    if (isStream) {
+      if (!isFunction) request._retryable = false;
+    } else {
+      headers[&#x27;content-length&#x27;] = request.body.length;
+    }
+  } else if (!~constants.EXCLUDE_CONTENT_LENGTH.indexOf(opts.method)) {
+    headers[&#x27;content-length&#x27;] = 0;
+  }
+
+  // response pipe
+  if (opts.pipe) {
+    var isPipeFunction = typeof opts.pipe === &#x27;function&#x27;;
+
+    if (isPipeFunction) {
+      try {
+        request.pipe = opts.pipe();
+      } catch (err) {
+        return next(err);
+      }
+    } else {
+      request.pipe = opts.pipe;
+
+      request._retryable = false;
+    }
+
+    if (!utils.isWritableStream(request.pipe)) {
+      return next(errors.Validation(&#x27;pipe must be a writable stream&#x27;));
+    }
+  }
+
+  // build http.request options
+  request.req = utils.merge(
+    utils.pick(self._opts, constants.CLIENT_OPTIONS),
+    utils.pick(self._opts.baseUrl, &#x27;auth&#x27;, &#x27;hostname&#x27;, &#x27;port&#x27;, &#x27;path&#x27;),
+    utils.pick(opts, constants.REQUEST_OPTIONS),
+    { headers: headers }
+  );
+
+  // append request path to baseUrl
+  request.req.path += path;
+
+  // pick http transport
+  if (self._opts.baseUrl.protocol === &#x27;https:&#x27;) {
+    request.transport = https;
+    if (!request.req.port) request.req.port = 443;
+  } else {
+    request.transport = http;
+    if (!request.req.port) request.req.port = 80;
+  }
+
+  if (request.req.auth === null) delete request.req.auth;
+
+  next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype.__execute" id="apidoc.element.jenkins.Jenkins.super_.prototype.__execute">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>__execute
+        <span class="apidocSignatureSpan">(request, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__execute = function (request, next) {
+  var self = this;
+
+  if (request.ctx) {
+    if (request.ctx.canceled === true) {
+      return next(errors.Validation(&#x27;ctx already canceled&#x27;));
+    } else if (request.ctx.finished === true) {
+      return next(errors.Validation(&#x27;ctx already finished&#x27;));
+    }
+  }
+
+  var done = false;
+
+  var opts = request.opts;
+
+  var abort;
+  var timeoutId;
+  var timeout = opts.hasOwnProperty(&#x27;timeout&#x27;) ?
+    opts.timeout : self._opts.timeout;
+
+  self._log([&#x27;papi&#x27;, &#x27;request&#x27;].concat(opts.tags), request.req);
+
+  var req = request.transport.request(request.req);
+
+  var userAgent = req.getHeader(&#x27;user-agent&#x27;);
+
+  if (userAgent === undefined) {
+    req.setHeader(&#x27;user-agent&#x27;, &#x27;papi/&#x27; + meta.version);
+  } else if (userAgent === null) {
+    req.removeHeader(&#x27;user-agent&#x27;);
+  }
+
+  req.on(&#x27;error&#x27;, function(err) {
+    self._log([&#x27;papi&#x27;, &#x27;request&#x27;, &#x27;error&#x27;].concat(opts.tags), err);
+
+    if (done) return;
+    done = true;
+
+    if (abort) request.ctx.removeListener(&#x27;cancel&#x27;, abort);
+    if (timeoutId) clearTimeout(timeoutId);
+
+    request.err = err;
+    next();
+  });
+
+  if (request.ctx) {
+    abort = function() {
+      req.abort();
+      req.emit(&#x27;error&#x27;, errors.Abort(&#x27;request aborted&#x27;));
+    };
+
+    request.ctx.once(&#x27;cancel&#x27;, abort);
+  }
+
+  // set request and absolute timeout
+  if (timeout &#x26;&#x26; timeout &#x3e; 0) {
+    timeoutId = setTimeout(function() {
+      req.emit(&#x27;timeout&#x27;);
+      req.abort();
+    }, timeout);
+
+    req.setTimeout(timeout);
+  }
+
+  req.on(&#x27;timeout&#x27;, function(err) {
+    self._log([&#x27;papi&#x27;, &#x27;request&#x27;, &#x27;error&#x27;, &#x27;timeout&#x27;].concat(opts.tags));
+    if (err) {
+      err = errors.Timeout(err);
+    } else {
+      err = errors.Timeout(&#x27;request timed out (&#x27; + timeout + &#x27;ms)&#x27;);
+    }
+    req.emit(&#x27;error&#x27;, err);
+  });
+
+  req.on(&#x27;response&#x27;, function(res) {
+    var chunks = [];
+    var bodyLength = 0;
+
+    self._log([&#x27;papi&#x27;, &#x27;response&#x27;].concat(opts.tags), {
+      method: opts.method,
+      path: req.path,
+      statusCode: res.statusCode,
+      headers: res.headers,
+      remoteAddress: res.connection.remoteAddress,
+      remotePort: res.connection.remotePort,
+    });
+
+    request.res = res;
+
+    if (request.pipe) {
+      res.pipe(request.pipe);
+    } else {
+      res.on(&#x27;data&#x27;, function(chunk) {
+        chunks.push(chunk);
+        bodyLength += chunk.length;
+      });
+    }
+
+    res.on(&#x27;end&#x27;, function() {
+      if (done) return;
+      done = true;
+
+      if (abort) request.ctx.removeListener(&#x27;cancel&#x27;, abort);
+      if (timeoutId) clearTimeout(timeoutId);
+
+      // body content mime
+      var mime;
+
+      // decode body
+      if (bodyLength) {
+        res.body = Buffer.concat(chunks, bodyLength);
+
+        // don&#x27;t decode if user explicitly asks for buffer
+        if (!opts.buffer) {
+          mime = (res.headers[&#x27;content-type&#x27;] || &#x27;&#x27;).split(&#x27;;&#x27;)[0].trim();
+
+          if (self._opts.decoders[mime]) {
+            try {
+              res.body = self._decode(mime, res.body);
+            } catch (err) {
+              request.err = err;
+              return next();
+            }
+          }
+        }
+      }
+
+      // any non-200 is consider an error
+      if (Math.floor(res.statusCode / 100) !== 2) {
+        var err = errors.Response();
+
+        if (res.body &#x26;&#x26; mime === &#x27;text/plain&#x27; &#x26;&#x26; res.body.length &#x3c; 80) {
+          err.message = res.body;
+        }
+
+        if (!err.message) {
+          if (http.STATUS_CODES[res.statusCode]) {
+            err.message = http.STATUS_CODES[res.statusCode].toLowerCase();
+          } else {
+            err.message = &#x27;request failed: &#x27; + res.statusCode;
+          }
+        }
+
+        err.statusCode = res.statusCode;
+
+        request.err = err;
+      }
+
+      next();
+    });
+  });
+
+  if (utils.isReadableStream(request.body)) {
+    request.body.pipe(req);
+  } else {
+    req.end(request.body);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype.__push" id="apidoc.element.jenkins.Jenkins.super_.prototype.__push">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>__push
+        <span class="apidocSignatureSpan">(request, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">__push = function (request, name) {
+  if (this._exts[name]) {
+    request._stack.push.apply(request._stack, this._exts[name]);
+  }
+
+  if (request.opts &#x26;&#x26; request.opts.exts &#x26;&#x26; request.opts.exts[name]) {
+    if (Array.isArray(request.opts.exts[name])) {
+      request._stack.push.apply(request._stack, request.opts.exts[name]);
+    } else {
+      request._stack.push(request.opts.exts[name]);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._decode" id="apidoc.element.jenkins.Jenkins.super_.prototype._decode">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_decode
+        <span class="apidocSignatureSpan">(mime, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_decode = function (mime, value) {
+  if (!this._opts.decoders[mime]) {
+    throw errors.Codec(&#x27;unknown decoder: &#x27; + mime);
+  }
+
+  try {
+    return this._opts.decoders[mime](value);
+  } catch (err) {
+    err.message = &#x27;decode (&#x27; + mime + &#x27;) failed: &#x27; + err.message;
+    throw errors.Codec(err);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._delete" id="apidoc.element.jenkins.Jenkins.super_.prototype._delete">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_delete
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_delete = function (opts) {
+  var args;
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { path: opts, method: reqMethod };
+
+    args = Array.prototype.slice.call(arguments);
+    args[0] = opts;
+
+    return this._request.apply(this, args);
+  } else if (!opts) {
+    args = Array.prototype.slice.call(arguments);
+    args[0] = {};
+
+    return this._request.apply(this, args);
+  }
+
+  opts.method = reqMethod;
+
+  return this._request.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._encode" id="apidoc.element.jenkins.Jenkins.super_.prototype._encode">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_encode
+        <span class="apidocSignatureSpan">(mime, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_encode = function (mime, value) {
+  if (!this._opts.encoders[mime]) {
+    throw errors.Codec(&#x27;unknown encoder: &#x27; + mime);
+  }
+
+  try {
+    return this._opts.encoders[mime](value);
+  } catch (err) {
+    err.message = &#x27;encode (&#x27; + mime + &#x27;) failed: &#x27; + err.message;
+    throw errors.Codec(err);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._err" id="apidoc.element.jenkins.Jenkins.super_.prototype._err">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_err
+        <span class="apidocSignatureSpan">(err, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_err = function (err, opts) {
+  if (!err) return err;
+
+  if (!(err instanceof Error)) err = new Error(err);
+
+  if (opts &#x26;&#x26; opts.name) {
+    err.message = util.format(&#x27;%s: %s&#x27;, opts.name, err.message);
+  }
+
+  if (this._opts.name) {
+    err.message = util.format(&#x27;%s: %s&#x27;, this._opts.name, err.message);
+  }
+
+  return err;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (opts.parameters) {
+    req.path += &#x27;WithParameters&#x27;;
+    req.query = opts.parameters;
+  }
+
+  if (opts.token) req.query.token = opts.token;
+} catch (err) {
+  return callback(this.jenkins.<span class="apidocCodeKeywordSpan">_err</span>(err, req));
+}
+
+return this.jenkins._post(
+  req,
+  middleware.notFound(opts.name),
+  middleware.queueLocation,
+  callback
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._ext" id="apidoc.element.jenkins.Jenkins.super_.prototype._ext">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_ext
+        <span class="apidocSignatureSpan">(eventName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_ext = function (eventName, callback) {
+  if (!eventName || typeof eventName !== &#x27;string&#x27;) {
+    throw this._err(errors.Validation(&#x27;extension eventName required&#x27;));
+  }
+
+  if (typeof callback !== &#x27;function&#x27;) {
+    throw this._err(errors.Validation(&#x27;extension callback required&#x27;));
+  }
+
+  if (!this._exts[eventName]) this._exts[eventName] = [];
+
+  this._exts[eventName].push(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this._crumbIssuer = opts.crumbIssuer;
+} else if (opts.crumbIssuer === true) {
+  this._crumbIssuer = utils.crumbIssuer;
+}
+
+papi.Client.call(this, opts);
+
+this.<span class="apidocCodeKeywordSpan">_ext</span>(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._get" id="apidoc.element.jenkins.Jenkins.super_.prototype._get">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_get
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_get = function (opts) {
+  var args;
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { path: opts, method: reqMethod };
+
+    args = Array.prototype.slice.call(arguments);
+    args[0] = opts;
+
+    return this._request.apply(this, args);
+  } else if (!opts) {
+    args = Array.prototype.slice.call(arguments);
+    args[0] = {};
+
+    return this._request.apply(this, args);
+  }
+
+  opts.method = reqMethod;
+
+  return this._request.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var req = {
+    name: &#x27;crumbIssuer.get&#x27;,
+    path: &#x27;/crumbIssuer/api/json&#x27;,
+  };
+
+  utils.options(req, opts);
+
+  return this.jenkins.<span class="apidocCodeKeywordSpan">_get</span>(req, middleware.body, callback);
+};
+
+/**
+ * Module exports.
+ */
+
+exports.CrumbIssuer = CrumbIssuer;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._head" id="apidoc.element.jenkins.Jenkins.super_.prototype._head">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_head
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_head = function (opts) {
+  var args;
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { path: opts, method: reqMethod };
+
+    args = Array.prototype.slice.call(arguments);
+    args[0] = opts;
+
+    return this._request.apply(this, args);
+  } else if (!opts) {
+    args = Array.prototype.slice.call(arguments);
+    args[0] = {};
+
+    return this._request.apply(this, args);
+  }
+
+  opts.method = reqMethod;
+
+  return this._request.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    req.path = &#x27;{folder}/api/json&#x27;;
+    req.params = { folder: folder.path() };
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins.<span class="apidocCodeKeywordSpan">_head</span>(req, middleware.exists, callback);
+};
+
+/**
+ * Job details
+ */
+
+Job.prototype.get = function(opts, callback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._log" id="apidoc.element.jenkins.Jenkins.super_.prototype._log">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_log
+        <span class="apidocSignatureSpan">(tags, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_log = function (tags, data) {
+  return this.emit(&#x27;log&#x27;, tags, data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+CrumbIssuer.prototype.get = function(opts, callback) {
+if (typeof opts === &#x27;function&#x27;) {
+  callback = opts;
+  opts = {};
+}
+
+this.jenkins.<span class="apidocCodeKeywordSpan">_log</span>([&#x27;debug&#x27;, &#x27;crumbIssuer&#x27;, &#x27;get&#x27;], opts
+);
+
+var req = {
+  name: &#x27;crumbIssuer.get&#x27;,
+  path: &#x27;/crumbIssuer/api/json&#x27;,
+};
+
+utils.options(req, opts);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._options" id="apidoc.element.jenkins.Jenkins.super_.prototype._options">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_options
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_options = function (opts) {
+  var args;
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { path: opts, method: reqMethod };
+
+    args = Array.prototype.slice.call(arguments);
+    args[0] = opts;
+
+    return this._request.apply(this, args);
+  } else if (!opts) {
+    args = Array.prototype.slice.call(arguments);
+    args[0] = {};
+
+    return this._request.apply(this, args);
+  }
+
+  opts.method = reqMethod;
+
+  return this._request.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._patch" id="apidoc.element.jenkins.Jenkins.super_.prototype._patch">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_patch
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_patch = function (opts) {
+  var args;
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { path: opts, method: reqMethod };
+
+    args = Array.prototype.slice.call(arguments);
+    args[0] = opts;
+
+    return this._request.apply(this, args);
+  } else if (!opts) {
+    args = Array.prototype.slice.call(arguments);
+    args[0] = {};
+
+    return this._request.apply(this, args);
+  }
+
+  opts.method = reqMethod;
+
+  return this._request.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._plugin" id="apidoc.element.jenkins.Jenkins.super_.prototype._plugin">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_plugin
+        <span class="apidocSignatureSpan">(plugin, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_plugin = function (plugin, options) {
+  if (!plugin) {
+    throw this._err(errors.Validation(&#x27;plugin required&#x27;));
+  }
+
+  if (typeof plugin.register !== &#x27;function&#x27;) {
+    throw this._err(errors.Validation(&#x27;plugin must have register function&#x27;));
+  }
+
+  var attributes = plugin.register.attributes;
+
+  if (!attributes) {
+    throw this._err(errors.Validation(&#x27;plugin attributes required&#x27;));
+  }
+
+  if (!attributes.name) {
+    throw this._err(errors.Validation(&#x27;plugin attributes name required&#x27;));
+  }
+
+  if (!attributes.version) {
+    throw this._err(errors.Validation(&#x27;plugin attributes version required&#x27;));
+  }
+
+  return plugin.register(this, options || {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._post" id="apidoc.element.jenkins.Jenkins.super_.prototype._post">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_post
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_post = function (opts) {
+  var args;
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { path: opts, method: reqMethod };
+
+    args = Array.prototype.slice.call(arguments);
+    args[0] = opts;
+
+    return this._request.apply(this, args);
+  } else if (!opts) {
+    args = Array.prototype.slice.call(arguments);
+    args[0] = {};
+
+    return this._request.apply(this, args);
+  }
+
+  opts.method = reqMethod;
+
+  return this._request.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+
+    if (opts.token) req.query.token = opts.token;
+  } catch (err) {
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins.<span class="apidocCodeKeywordSpan">_post</span>(
+    req,
+    middleware.notFound(opts.name),
+    middleware.queueLocation,
+    callback
+  );
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._put" id="apidoc.element.jenkins.Jenkins.super_.prototype._put">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_put
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_put = function (opts) {
+  var args;
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { path: opts, method: reqMethod };
+
+    args = Array.prototype.slice.call(arguments);
+    args[0] = opts;
+
+    return this._request.apply(this, args);
+  } else if (!opts) {
+    args = Array.prototype.slice.call(arguments);
+    args[0] = {};
+
+    return this._request.apply(this, args);
+  }
+
+  opts.method = reqMethod;
+
+  return this._request.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.Jenkins.super_.prototype._request" id="apidoc.element.jenkins.Jenkins.super_.prototype._request">
+        function <span class="apidocSignatureSpan">jenkins.Jenkins.super_.prototype.</span>_request
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_request = function (opts) {
+  var self = this;
+
+  var request;
+
+  if (this.__request) {
+    request = this.__request;
+    opts = request.opts;
+    self = request._client;
+  } else {
+    request = {
+      _args: Array.prototype.slice.call(arguments),
+      _client: this,
+      opts: opts,
+      state: {},
+    };
+
+    if (!opts) opts = request.opts = {};
+
+    if (request._args.length &#x3e; 1) {
+      request._callback = request._args[request._args.length - 1];
+    } else {
+      return self.emit(&#x27;error&#x27;, self._err(
+        errors.Validation(&#x27;callback required&#x27;), opts));
+    }
+
+    // if ctx is an event emitter we use it to abort requests when done is
+    // emitted
+    if (opts.ctx instanceof events.EventEmitter) {
+      request.ctx = opts.ctx;
+    }
+
+    // combine global and request tags
+    opts.tags = (opts.tags || []).concat(self._opts.tags);
+
+    // inject request name into tags if not already defined
+    if (opts.name &#x26;&#x26; !~opts.tags.indexOf(opts.name)) {
+      opts.tags.push(opts.name);
+    }
+
+    if (!opts.headers) opts.headers = {};
+    if (!opts.params) opts.params = {};
+    if (!opts.query) opts.query = {};
+
+    // restart request
+    request.retry = function() {
+      if (request._retryable === false) {
+        throw errors.Validation(&#x27;request is not retryable&#x27;);
+      }
+
+      self._log([&#x27;papi&#x27;, &#x27;request&#x27;, &#x27;retry&#x27;].concat(request.opts.tags));
+
+      delete request.body;
+      delete request.err;
+      delete request.req;
+      delete request.res;
+      delete request.transport;
+
+      self._request.call({ __request: request });
+    };
+
+    request._stack = [];
+
+    self.__push(request, &#x27;onCreate&#x27;);
+
+    request._stack.push(self.__create);
+
+    self.__push(request, &#x27;onRequest&#x27;);
+
+    request._stack.push(self.__execute);
+
+    self.__push(request, &#x27;onResponse&#x27;);
+
+    request._stack.push.apply(
+      request._stack,
+      request._args.slice(1, request._args.length - 1)
+    );
+  }
+
+  var i = 0;
+  function next(err) {
+    if (err) return request._callback(self._err(err, opts));
+
+    // middlware can call next(false, args...) to stop middleware
+    if (err === false) {
+      return request._callback.apply(null,
+        Array.prototype.slice.call(arguments, 1));
+    }
+
+    var fn = request._stack[i++];
+    if (fn) {
+      fn.call(self, request, next);
+    } else {
+      request._callback.call(self, self._err(request.err, opts), request.res);
+    }
+  }
+
+  next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else {
+  req.method = &#x27;GET&#x27;;
+}
+  } catch (err) {
+return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins.<span class="apidocCodeKeywordSpan">_request</span>(
+req,
+middleware.notFound(&#x27;job &#x27; + opts.name),
+function(ctx, next) {
+  if (ctx.err || opts.xml) return middleware.empty(ctx, next);
+
+  next(false, null, ctx.res.body.toString(&#x27;utf8&#x27;));
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.crumb_issuer" id="apidoc.module.jenkins.crumb_issuer">module jenkins.crumb_issuer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.crumb_issuer.CrumbIssuer" id="apidoc.element.jenkins.crumb_issuer.CrumbIssuer">
+        function <span class="apidocSignatureSpan">jenkins.crumb_issuer.</span>CrumbIssuer
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CrumbIssuer(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+papi.Client.call(this, opts);
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.<span class="apidocCodeKeywordSpan">CrumbIssuer</span>(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.jenkins" id="apidoc.module.jenkins.jenkins">module jenkins.jenkins</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.jenkins.Jenkins" id="apidoc.element.jenkins.jenkins.Jenkins">
+        function <span class="apidocSignatureSpan">jenkins.jenkins.</span>Jenkins
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Jenkins(opts) {
+  if (!(this instanceof Jenkins)) {
+    return new Jenkins(opts);
+  }
+
+  if (typeof opts === &#x27;string&#x27;) {
+    opts = { baseUrl: opts };
+  } else {
+    opts = opts || {};
+  }
+
+  if (!opts.baseUrl) {
+    if (opts.url) {
+      opts.baseUrl = opts.url;
+      delete opts.url;
+    } else {
+      throw new Error(&#x27;baseUrl required&#x27;);
+    }
+  }
+
+  if (!opts.headers) {
+    opts.headers = {};
+  }
+  if (!opts.headers.referer) {
+    opts.headers.referer = opts.baseUrl + &#x27;/&#x27;;
+  }
+
+  if (opts.request) {
+    throw new Error(&#x27;request not longer supported&#x27;);
+  }
+
+  opts.name = &#x27;jenkins&#x27;;
+
+  if (typeof opts.crumbIssuer === &#x27;function&#x27;) {
+    this._crumbIssuer = opts.crumbIssuer;
+  } else if (opts.crumbIssuer === true) {
+    this._crumbIssuer = utils.crumbIssuer;
+  }
+
+  papi.Client.call(this, opts);
+
+  this._ext(&#x27;onCreate&#x27;, this._onCreate);
+  this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+  this.build = new Jenkins.Build(this);
+  this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+  this.job = new Jenkins.Job(this);
+  this.node = new Jenkins.Node(this);
+  this.queue = new Jenkins.Queue(this);
+  this.view = new Jenkins.View(this);
+
+  try {
+    if (opts.promisify) {
+      if (typeof opts.promisify === &#x27;function&#x27;) {
+        papi.tools.promisify(this, opts.promisify);
+      } else {
+        papi.tools.promisify(this);
+      }
+    }
+  } catch (err) {
+    err.message = &#x27;promisify: &#x27; + err.message;
+    throw err;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.job" id="apidoc.module.jenkins.job">module jenkins.job</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.job.Job" id="apidoc.element.jenkins.job.Job">
+        function <span class="apidocSignatureSpan">jenkins.job.</span>Job
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Job(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+papi.Client.call(this, opts);
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.<span class="apidocCodeKeywordSpan">Job</span>(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.middleware" id="apidoc.module.jenkins.middleware">module jenkins.middleware</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.middleware.body" id="apidoc.element.jenkins.middleware.body">
+        function <span class="apidocSignatureSpan">jenkins.middleware.</span>body
+        <span class="apidocSignatureSpan">(ctx, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function body(ctx, next) {
+  if (ctx.err) return next(ctx.err);
+
+  next(false, null, ctx.res.body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.middleware.bodyItem" id="apidoc.element.jenkins.middleware.bodyItem">
+        function <span class="apidocSignatureSpan">jenkins.middleware.</span>bodyItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function bodyItem(key) {
+  return function(ctx, next) {
+    if (ctx.err) return next(ctx.err);
+
+    next(false, null, ctx.res.body[key]);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+     if (!ctx.res.body || !Array.isArray(ctx.res.body.jobs)) {
+       ctx.err = new Error(&#x27;returned bad data&#x27;);
+     }
+
+     next();
+   },
+   middleware.<span class="apidocCodeKeywordSpan">bodyItem</span>(&#x27;jobs&#x27;),
+   callback
+ );
+};
+
+/**
+* Module exports.
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.middleware.empty" id="apidoc.element.jenkins.middleware.empty">
+        function <span class="apidocSignatureSpan">jenkins.middleware.</span>empty
+        <span class="apidocSignatureSpan">(ctx, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function empty(ctx, next) {
+  if (ctx.err) return next(ctx.err);
+
+  next(false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return callback(this.jenkins._err(err, req));
+  }
+
+  return this.jenkins._request(
+    req,
+    middleware.notFound(&#x27;job &#x27; + opts.name),
+    function(ctx, next) {
+      if (ctx.err || opts.xml) return middleware.<span class="apidocCodeKeywordSpan">empty</span>(ctx, next);
+
+      next(false, null, ctx.res.body.toString(&#x27;utf8&#x27;));
+    },
+    callback
+  );
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.middleware.exists" id="apidoc.element.jenkins.middleware.exists">
+        function <span class="apidocSignatureSpan">jenkins.middleware.</span>exists
+        <span class="apidocSignatureSpan">(ctx, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function exists(ctx, next) {
+  if (ctx.res &#x26;&#x26; ctx.res.statusCode === 404) {
+    return next(false, null, false);
+  }
+
+  if (ctx.err) return next(ctx.err);
+
+  next(false, null, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+jenkins.job.enable(&#x27;example&#x27;, function(err) {
+ if (err) throw err;
+});
+```
+
+&#x3c;a name=&#x22;job-exists&#x22;&#x3e;&#x3c;/a&#x3e;
+### jenkins.job.<span class="apidocCodeKeywordSpan">exists</span>(options, callback)
+
+Check job exists.
+
+Options
+
+* name (String): job name
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.middleware.notFound" id="apidoc.element.jenkins.middleware.notFound">
+        function <span class="apidocSignatureSpan">jenkins.middleware.</span>notFound
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notFound(value) {
+  return function(ctx, next) {
+    if (ctx.res &#x26;&#x26; ctx.res.statusCode === 404) {
+      var err = new Error(value + &#x27; not found&#x27;);
+      err.notFound = true;
+
+      return next(err);
+    }
+
+    next();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   if (opts.token) req.query.token = opts.token;
+ } catch (err) {
+   return callback(this.jenkins._err(err, req));
+ }
+
+ return this.jenkins._post(
+   req,
+   middleware.<span class="apidocCodeKeywordSpan">notFound</span>(opts.name),
+   middleware.queueLocation,
+   callback
+ );
+};
+
+/**
+* Get or update config
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.middleware.queueLocation" id="apidoc.element.jenkins.middleware.queueLocation">
+        function <span class="apidocSignatureSpan">jenkins.middleware.</span>queueLocation
+        <span class="apidocSignatureSpan">(ctx, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function queueLocation(ctx, next) {
+  if (ctx.err) return next(ctx.err);
+
+  try {
+    // Get queue number from location header
+    var parts = ctx.res.headers.location.split(&#x27;/&#x27;);
+
+    return next(false, null, parseInt(parts[parts.length - 2], 10));
+  } catch (err) {
+    // ignore errors
+  }
+
+  next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.middleware.require302" id="apidoc.element.jenkins.middleware.require302">
+        function <span class="apidocSignatureSpan">jenkins.middleware.</span>require302
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function require302(message) {
+  return function(ctx, next) {
+    if (ctx.res &#x26;&#x26; ctx.res.statusCode === 302) {
+      return next(false);
+    } else if (ctx.res) {
+      if (ctx.err) {
+        if (!ctx.res.headers[&#x27;x-error&#x27;]) ctx.err.message = message;
+      } else {
+        ctx.err = new Error(message);
+      }
+
+      return next(ctx.err);
+    }
+
+    next();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   req.query.mode = &#x27;copy&#x27;;
+ } catch (err) {
+   return callback(this.jenkins._err(err, req));
+ }
+
+ return this.jenkins._post(
+   req,
+   middleware.<span class="apidocCodeKeywordSpan">require302</span>(&#x27;failed to create: &#x27; + opts.name),
+   middleware.empty,
+   callback
+ );
+};
+
+/**
+* Create new job from xml
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.node" id="apidoc.module.jenkins.node">module jenkins.node</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.node.Node" id="apidoc.element.jenkins.node.Node">
+        function <span class="apidocSignatureSpan">jenkins.node.</span>Node
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Node(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.<span class="apidocCodeKeywordSpan">Node</span>(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+      papi.tools.promisify(this, opts.promisify);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.queue" id="apidoc.module.jenkins.queue">module jenkins.queue</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.queue.Queue" id="apidoc.element.jenkins.queue.Queue">
+        function <span class="apidocSignatureSpan">jenkins.queue.</span>Queue
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Queue(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._ext(&#x27;onCreate&#x27;, this._onCreate);
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.<span class="apidocCodeKeywordSpan">Queue</span>(this);
+this.view = new Jenkins.View(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+      papi.tools.promisify(this, opts.promisify);
+    } else {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.utils" id="apidoc.module.jenkins.utils">module jenkins.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.utils.FolderPath" id="apidoc.element.jenkins.utils.FolderPath">
+        function <span class="apidocSignatureSpan">jenkins.utils.</span>FolderPath
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FolderPath(value) {
+  if (!(this instanceof FolderPath)) {
+    return new FolderPath(value);
+  }
+  if (Array.isArray(value)) {
+    this.value = value;
+  } else if (typeof value === &#x27;string&#x27;) {
+    if (value.match(&#x27;^https?:\/\/&#x27;)) {
+      this.value = parseName(value);
+    } else {
+      this.value = value.split(&#x27;/&#x27;).filter(Boolean);
+    }
+  } else {
+    this.value = [];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.jenkins._log([&#x27;debug&#x27;, &#x27;job&#x27;, &#x27;build&#x27;], opts);
+
+  var req = { name: &#x27;job.build&#x27; };
+
+  utils.options(req, opts);
+
+  try {
+var folder = utils.<span class="apidocCodeKeywordSpan">FolderPath</span>(opts.name);
+
+if (folder.isEmpty()) throw new Error(&#x27;name required&#x27;);
+
+req.path = &#x27;{folder}/build&#x27;;
+req.params = { folder: folder.path() };
+
+if (opts.parameters) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.utils.crumbIssuer" id="apidoc.element.jenkins.utils.crumbIssuer">
+        function <span class="apidocSignatureSpan">jenkins.utils.</span>crumbIssuer
+        <span class="apidocSignatureSpan">(jenkins, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function crumbIssuer(jenkins, callback) {
+  jenkins.crumbIssuer.get(function(err, data) {
+    if (err) return callback(err);
+    if (!data || !data.crumbRequestField || !data.crumb) {
+      return callback(new Error(&#x27;Failed to get crumb&#x27;));
+    }
+
+    callback(null, {
+      headerName: data.crumbRequestField,
+      headerValue: data.crumb,
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.utils.options" id="apidoc.element.jenkins.utils.options">
+        function <span class="apidocSignatureSpan">jenkins.utils.</span>options
+        <span class="apidocSignatureSpan">(req, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function options(req, opts) {
+  if (!req.query) req.query = {};
+
+  if (typeof opts.depth === &#x27;number&#x27;) {
+    req.query.depth = opts.depth;
+  }
+
+  if (typeof opts.tree === &#x27;string&#x27;) {
+    req.query.tree = opts.tree;
+  }
+
+  return opts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ this.jenkins._log([&#x27;debug&#x27;, &#x27;crumbIssuer&#x27;, &#x27;get&#x27;], opts);
+
+ var req = {
+   name: &#x27;crumbIssuer.get&#x27;,
+   path: &#x27;/crumbIssuer/api/json&#x27;,
+ };
+
+ utils.<span class="apidocCodeKeywordSpan">options</span>(req, opts);
+
+ return this.jenkins._get(req, middleware.body, callback);
+};
+
+/**
+* Module exports.
+*/
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jenkins.view" id="apidoc.module.jenkins.view">module jenkins.view</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jenkins.view.View" id="apidoc.element.jenkins.view.View">
+        function <span class="apidocSignatureSpan">jenkins.view.</span>View
+        <span class="apidocSignatureSpan">(jenkins)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function View(jenkins) {
+  this.jenkins = jenkins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this._ext(&#x27;onResponse&#x27;, this._onResponse);
+
+this.build = new Jenkins.Build(this);
+this.crumbIssuer = new Jenkins.CrumbIssuer(this);
+this.job = new Jenkins.Job(this);
+this.node = new Jenkins.Node(this);
+this.queue = new Jenkins.Queue(this);
+this.view = new Jenkins.<span class="apidocCodeKeywordSpan">View</span>(this);
+
+try {
+  if (opts.promisify) {
+    if (typeof opts.promisify === &#x27;function&#x27;) {
+      papi.tools.promisify(this, opts.promisify);
+    } else {
+      papi.tools.promisify(this);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
