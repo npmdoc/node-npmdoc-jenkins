@@ -1,6 +1,6 @@
 # npmdoc-jenkins
 
-#### api documentation for  [jenkins (v0.20.0)](https://github.com/silas/node-jenkins#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jenkins.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jenkins) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jenkins.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jenkins)
+#### basic api documentation for  [jenkins (v0.20.0)](https://github.com/silas/node-jenkins#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jenkins.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jenkins) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jenkins.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jenkins)
 
 #### Jenkins client
 
@@ -72,7 +72,8 @@
         "cover": "istanbul cover ./node_modules/.bin/_mocha -- --recursive --check-leaks --timeout 15000 && open coverage/lcov-report/index.html",
         "test": "jshint lib test && ./node_modules/.bin/jscs lib test && ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive --check-leaks --timeout 15000"
     },
-    "version": "0.20.0"
+    "version": "0.20.0",
+    "bin": {}
 }
 ```
 
